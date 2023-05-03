@@ -35,6 +35,9 @@
             <!-- Send -->
             <button type="button" class="btn btn-success" onclick="sendFormula()">Send</button>
 
+            <!-- Calculate -->
+            <a href="calculate.php" class="btn btn-primary">Calculate</a>
+
         </div>
 
     </section>
