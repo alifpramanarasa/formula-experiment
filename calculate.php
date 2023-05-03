@@ -6,8 +6,10 @@
     use MathParser\Interpreting\Evaluator;    
 
     $parser = new StdMathParser();
+
+    $formula = urldecode($_GET['formula']);
     
-    $AST = $parser->parse('( A + B ) - ( A * 2 )');
+    $AST = $parser->parse($formula);
     
     $evaluator = new Evaluator();
     $evaluator->setVariables([ 'A' => 2, 'B' => 3 ]);

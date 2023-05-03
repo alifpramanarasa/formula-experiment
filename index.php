@@ -36,7 +36,7 @@
             <button type="button" class="btn btn-success" onclick="sendFormula()">Send</button>
 
             <!-- Calculate -->
-            <a href="calculate.php" class="btn btn-primary">Calculate</a>
+            <button type="button" class="btn btn-success" onclick="calculate()">Calculate</button>
 
         </div>
 
@@ -163,6 +163,18 @@
 
         console.log(contentArr);
         console.log(typeArr);
+    }
+
+    function calculate() {
+        var formula = '';
+
+        // Each without first row
+        $('#formula-table tbody tr').slice(1).each(function() {
+            var content = $(this).find('td').eq(0).text();            
+            formula += content + '';
+        });
+        
+        window.location.href = 'calculate.php?formula=' + formula;
     }
     
 
